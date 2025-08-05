@@ -16,9 +16,6 @@
     --gradient: linear-gradient(135deg, #00c6ab 0%, #4a4e69 100%);
 }
 
-/* ... rest of your CSS ... */
-
-/* Achievements Section Styles */
 .achievement-section {
     margin-top: 2.6rem;
     margin-bottom: 2.6rem;
@@ -132,7 +129,6 @@ body.dark .achievement-captions {
     }
 }
 
-/* Base */
 html, body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     background: var(--light-bg);
@@ -143,8 +139,6 @@ body.dark {
     background: var(--dark-bg);
     color: var(--dark-text);
 }
-
-/* NAVIGATION & DARK MODE */
 nav {
     width: 100%;
     background: var(--primary);
@@ -1084,3 +1078,46 @@ body.dark .footer-friends a {
 body.dark .footer-friends a:hover {
     color: #fff;
 }
+
+
+.education-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.education-card {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.1rem 1.3rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(55,90,127,0.08);
+    font-size: 1.1rem;
+    transition: 
+        background var(--transition), 
+        color var(--transition), 
+        transform 0.22s cubic-bezier(.42,0,.58,1.0), 
+        box-shadow 0.22s cubic-bezier(.42,0,.58,1.0);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.education-card:hover,
+.education-card:focus {
+    background: var(--primary);
+    color: var(--accent);
+    transform: translateY(-4px) scale(1.04) rotate(-1deg);
+    box-shadow: 0 8px 24px #00c6ab55;
+    outline: none;
+}
+body.dark .education-card {
+    background: var(--accent-dark);
+    color: #e2e2fd;
+}
+body.dark .education-card:hover,
+body.dark .education-card:focus {
+    background: var(--primary);
+    color: var(--accent-dark);
+    box-shadow: 0 8px 24px #00c6ab99;
+}
+
+
