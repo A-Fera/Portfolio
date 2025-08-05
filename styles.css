@@ -16,6 +16,122 @@
     --gradient: linear-gradient(135deg, #00c6ab 0%, #4a4e69 100%);
 }
 
+/* ... rest of your CSS ... */
+
+/* Achievements Section Styles */
+.achievement-section {
+    margin-top: 2.6rem;
+    margin-bottom: 2.6rem;
+    background: linear-gradient(120deg, #e0fcf6 0%, #f7faff 100%);
+    border-radius: 18px;
+    box-shadow: 0 6px 32px #00c6ab15;
+    padding: 3rem 2rem 2.5rem 2rem;
+    transition: background var(--transition), color var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+body.dark .achievement-section {
+    background: linear-gradient(120deg, #23253a 0%, #181924 100%);
+    box-shadow: 0 6px 32px #00c6ab22;
+}
+.achievement-section h2 {
+    font-size: 2.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    letter-spacing: 1.2px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+}
+body.dark .achievement-section h2 {
+    color: var(--accent);
+}
+.achievement-intro {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 1.13rem;
+    max-width: 650px;
+    margin: 0 auto 2.1rem auto;
+    opacity: 0.92;
+    font-weight: 500;
+}
+body.dark .achievement-intro {
+    color: #baf3e6;
+}
+.achievement-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 1.5rem auto;
+    padding-bottom: 0.5rem;
+}
+.achievement-photo {
+    background: var(--accent);
+    border-radius: 14px;
+    box-shadow: 0 2px 16px #00c6ab33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    transition:
+        background 0.24s,
+        box-shadow 0.24s,
+        transform 0.18s;
+    position: relative;
+}
+body.dark .achievement-photo {
+    background: var(--accent-dark);
+    box-shadow: 0 2px 16px #00c6ab26;
+}
+.achievement-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.28s cubic-bezier(.42,0,.58,1.0), filter 0.23s;
+    filter: brightness(0.98) contrast(1.03);
+}
+.achievement-photo:hover img {
+    transform: scale(1.06) rotate(-2deg);
+    filter: brightness(1.1) contrast(1.09);
+    box-shadow: 0 6px 24px #00c6ab66;
+}
+.achievement-captions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.01rem;
+    color: var(--secondary);
+    text-align: center;
+    font-style: italic;
+    opacity: 0.92;
+}
+body.dark .achievement-captions {
+    color: #d5f6ff;
+}
+@media (max-width: 900px) {
+    .achievement-gallery, .achievement-captions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+@media (max-width: 600px) {
+    .achievement-section {
+        padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+    }
+    .achievement-gallery, .achievement-captions {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+}
+
 /* Base */
 html, body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
@@ -44,7 +160,7 @@ nav ul {
     margin: 0;
     padding: 0.8rem 0;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 nav ul li a {
     color: #fff;
@@ -920,3 +1036,51 @@ body.dark .footer-link:focus {
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px;}
 body.dark ::-webkit-scrollbar { background: var(--dark-bg);}
 body.dark ::-webkit-scrollbar-thumb { background: var(--accent-dark);}
+
+.footer-friends {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+body.dark .footer-friends {
+    border-top: 1px solid #2c2d44;
+}
+.footer-friends h4 {
+    margin-bottom: 0.6rem;
+    color: var(--accent);
+    font-size: 1.13rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.footer-friends ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer-friends li {
+    display: inline-block;
+}
+.footer-friends a {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.06rem;
+    text-decoration: none;
+    transition: color 0.19s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.footer-friends a:hover {
+    color: var(--accent);
+}
+body.dark .footer-friends a {
+    color: var(--accent-dark);
+}
+body.dark .footer-friends a:hover {
+    color: #fff;
+}
